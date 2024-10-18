@@ -19,7 +19,7 @@ const Booking = (props) => {
             <Text style={style.text}>{props.booking_hour}h</Text>
           </View>
         </View>
-        <Button text='Cancelar Reserva'/>
+        <Button text='Cancelar Reserva' theme='danger'/>
       </View>
     </View>
   )

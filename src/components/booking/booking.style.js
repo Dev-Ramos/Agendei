@@ -5,7 +5,7 @@ export const style = {
     flex: 1,
     backgorundColor: COLORS.white,
     padding: 8,
-    borderWidth: 1,
+    borderTopWidth: 1,
     borderColor: COLORS.gray4,
   },
   container2:{
