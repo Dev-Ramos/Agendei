@@ -1,11 +1,10 @@
-import Login from "./src/screens/login/login.jsx";
-import Account from "./src/screens/account/account.jsx";
-import Home from "./src/screens/home/Home.jsx";
+import Appointments from './src/screens/appointments/Appointments.jsx';
+import Calendar from './src/screens/appointments/Appointments.jsx'
 
 function App() {
 
   return <>
-    <Home />
+    <Appointments />
   </>;
 }
 

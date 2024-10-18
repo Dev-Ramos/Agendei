@@ -15,8 +15,8 @@ const FONT_SIZE = {
     sm: 14,
     md: 16,
     lg: 18,
-    xl: 32,
-    xxl: 64
+    xl: 20,
+    xxl: 24
 }
 
 export { COLORS, FONT_SIZE }
