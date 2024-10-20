@@ -4,7 +4,6 @@ import { styles } from "./profile.style.js"
 const Profile = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Meu Perfil</Text>
       <View style={styles.item}>
         <Text style={styles.tipoInfo}>Nome:</Text>
         <Text style={styles.info}>Lucas Ramos</Text>

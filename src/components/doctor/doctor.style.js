@@ -3,13 +3,14 @@ import { COLORS, FONT_SIZE } from "../../constants/theme";
 export const styles = {
   doctor: {
     flex: 1,
-    backgorundColor: COLORS.white,
+    backgroundColor: COLORS.white,
     padding: 8,
+    paddingTop: 12,
+    paddingBottom: 12,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
     flexDirection: 'row',
-    borderWidth: 1,
     borderColor: COLORS.gray4,
-    marginTop: 3,
-    borderRadius: 6
   },
   name:{
     fontSize: FONT_SIZE.md,

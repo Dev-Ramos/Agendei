@@ -1,9 +1,9 @@
-import Profile from './src/screens/profile/Profile.jsx';
+import Main from './src/screens/main/Main.jsx';
 
 function App() {
 
   return <>
-    <Profile />
+    <Main />
   </>;
 }
 

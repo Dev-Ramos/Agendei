@@ -3,7 +3,7 @@ import { COLORS, FONT_SIZE } from "../../constants/theme";
 export const style = {
   container:{
     flex: 1,
-    backgorundColor: COLORS.white,
+    backgroundColor: COLORS.white,
     padding: 8,
     borderTopWidth: 1,
     borderColor: COLORS.gray4,

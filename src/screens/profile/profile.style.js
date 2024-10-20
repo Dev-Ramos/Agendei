@@ -2,7 +2,7 @@ import { COLORS, FONT_SIZE } from "../../constants/theme";
 
 export const styles = {
   container: {
-    backgoundColor: COLORS.white,
+    backgroundColor: COLORS.white,
     flex: 1,
     padding: 12
   },
@@ -12,14 +12,6 @@ export const styles = {
     borderColor: COLORS.gray4,
     padding: 16,
     gap: 4
-  },
-  title: {
-    fontSize: FONT_SIZE.xl,
-    color: COLORS.blue,
-    marginTop: 16,
-    marginBottom: 20,
-    textAlign: 'center',
-    fontWeight: 600,
   },
   tipoInfo:{
     fontSize: FONT_SIZE.sm,

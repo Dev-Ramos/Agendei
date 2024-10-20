@@ -6,7 +6,6 @@ import Booking from "../../components/booking/Booking.jsx"
 const Appointments = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Minhas Reservas</Text>
       <FlatList
         data={appointments}
         keyExtractor={apt => apt.id_appointment}
