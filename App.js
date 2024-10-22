@@ -1,11 +1,9 @@
-import Calendar from './src/screens/calendar/Calendar.jsx';
-import Main from './src/screens/main/Main.jsx';
-import Services from './src/screens/services/Services.jsx';
+import TabNavigation from './src/navigations/tabNavigation/TabNavigation.jsx';
 
 function App() {
 
   return <>
-    <Calendar />
+    <TabNavigation />
   </>;
 }
 

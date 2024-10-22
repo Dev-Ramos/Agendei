@@ -14,7 +14,7 @@ const Home = () => {
         showsVerticalScrollIndicator={false}
         renderItem={({item}) => {
           return <Doctor name={item.name} 
-            icon={item.icon === 'M' ? icon.male : icon.female}
+            icon={item.icon}
             specialty={item.specialty}/>
         }}
       /> 

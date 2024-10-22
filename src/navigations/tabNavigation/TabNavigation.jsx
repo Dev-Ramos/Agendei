@@ -1,19 +1,19 @@
 import { NavigationContainer } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import Home from '../home/Home.jsx'
-import Appointments from '../appointments/Appointments.jsx'
-import Profile from "../profile/Profile.jsx"
+import Appointments from '../../screens/appointments/Appointments.jsx'
+import Profile from "../../screens/profile/Profile.jsx"
 import icon from "../../constants/icon.js"
-import { styles } from "./main.style.js"
+import { styles } from "./tabNavigation.style.js"
 import { Image, Text } from "react-native"
+import HomeNavigation from "../homeNavigation/HomeNavigation.jsx"
 
 const Tab = createBottomTabNavigator();
 
-const Main = () => {
+const TabNavigation = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} options={{
+        <Tab.Screen name="Home" component={HomeNavigation} options={{
           headerTitleAlign: 'center',
           headerTitle: ()=>{
             return <Image source={icon.logo} 
@@ -63,4 +63,4 @@ const Main = () => {
     </NavigationContainer>
   )
 }
-export default Main
+export default TabNavigation
