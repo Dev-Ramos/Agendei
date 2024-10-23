@@ -1,9 +1,14 @@
-import { Image, Text, View } from "react-native"
+import { Alert, Image, Text, View } from "react-native"
 import icon from "../../constants/icon.js"
 import Button from "../button/button.jsx"
 import { style } from "./booking.style.js"
 
 const Booking = (props) => {
+
+  const Action = ()=>{
+    Alert.alert('Você desmarcou uma consulta')
+  }
+
   return (
     <View style={style.container}>
       <Text style={style.title}>{props.service} - {props.doctor}</Text>
@@ -19,7 +24,7 @@ const Booking = (props) => {
             <Text style={style.text}>{props.booking_hour}h</Text>
           </View>
         </View>
-        <Button text='Cancelar Reserva' theme='danger'/>
+        <Button text='Cancelar Reserva' theme='danger' action={Action}/>
       </View>
     </View>
   )

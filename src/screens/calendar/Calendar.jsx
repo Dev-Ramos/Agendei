@@ -5,15 +5,20 @@ import {ptBR} from '../../constants/calendar.js'
 import { useState } from "react"
 import { Picker } from "@react-native-picker/picker"
 import Button from '../../components/button/button.jsx'
+import { useNavigation, useRoute } from "@react-navigation/native"
 
 LocaleConfig.locales['pt-br'] = ptBR
 LocaleConfig.defaultLocale = 'pt-br'
 
 const Calendar = () => {
-
-  const [selected, setSelected] = useState(new Date().toISOString())
-  const [selectedHour, setSelectedHour] = useState('')
-
+  const params = useRoute().params
+  const navigation = useNavigation()
+  const [selected, setSelected] = useState(new Date().toISOString().slice(0, 10))
+  const [selectedHour, setSelectedHour] = useState('09:00')
+  const Action = ()=>{
+    console.log(`Reserva: ${params.description}\n Data: ${selected}\n Horário: ${selectedHour}\n Valor: ${params.price}`)
+    navigation.navigate('home')
+  }
   return (
     <View style={styles.container}>
       <View>
@@ -42,7 +47,7 @@ const Calendar = () => {
       </View>
 
         <View>
-          <Button text='Confirmar Reserva'/>
+          <Button text='Confirmar Reserva' action={Action}/>
         </View>
     </View>
   )
