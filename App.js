@@ -1,10 +1,9 @@
-import Login from "./src/screens/login/login.jsx";
-import Account from "./src/screens/account/account.jsx";
+import TabNavigation from './src/navigations/tabNavigation/TabNavigation.jsx';
 
 function App() {
 
   return <>
-    <Account />
+    <TabNavigation />
   </>;
 }
 
