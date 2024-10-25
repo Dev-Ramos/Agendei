@@ -14,11 +14,7 @@ const TabNavigation = () => {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeNavigation} options={{
-          headerTitleAlign: 'center',
-          headerTitle: ()=>{
-            return <Image source={icon.logo} 
-              style={{width: 125, height: 29}}/>
-          },
+          headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({focused})=>{
             return <Image source={icon.home} 
