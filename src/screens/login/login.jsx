@@ -19,6 +19,7 @@ function Login(props) {
             })
 
             if(res.data){
+                api.defaults.headers.common['Authorization'] = "Bearer "+ res.data.token
                 setUser(res.data);
             }
         } catch (error) {
