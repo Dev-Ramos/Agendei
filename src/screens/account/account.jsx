@@ -17,9 +17,9 @@ function Account(props) {
                 email,
                 password
             })
-
             if(res.data){
                 console.log(res.data);
+                props.navigation.navigate('login')
             }
         } catch (error) {
             if(error.response?.data.error)

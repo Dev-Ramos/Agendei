@@ -2,12 +2,14 @@ import { Alert, Image, Text, TextInput, TouchableOpacity, View } from "react-nat
 import icon from "../../constants/icon.js";
 import { styles } from "./login.style.js";
 import Button from "../../components/button/button.jsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import api from "../../constants/api.js";
+import {AuthContext} from '../../contexts/auth.js'
 
 function Login(props) {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const {setUser}= useContext(AuthContext)
 
     const ExecuteLogin = async()=> {
         try {
@@ -17,7 +19,7 @@ function Login(props) {
             })
 
             if(res.data){
-                console.log(res.data);
+                setUser(res.data);
             }
         } catch (error) {
             if(error.response?.data.error)
