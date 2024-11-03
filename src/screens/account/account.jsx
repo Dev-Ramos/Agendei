@@ -2,8 +2,10 @@ import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import icon from "../../constants/icon.js";
 import { styles } from "./account.style.js";
 import Button from "../../components/button/button.jsx";
+import { useNavigation } from "@react-navigation/native";
 
 function Account() {
+    const navigation = useNavigation()
     return <View style={styles.container}>
 
         <View style={styles.containerLogo}>
@@ -27,7 +29,7 @@ function Account() {
 
         <View style={styles.footer}>
             <Text>Já tenho conta. </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{navigation.push('login')}}>
                 <Text style={styles.footerLink}>
                     Fazer login.
                 </Text>
