@@ -8,6 +8,7 @@ const Doctor = (props) => {
   
   return (
     <TouchableOpacity style={styles.doctor} onPress={()=>navigation.push('services', {
+      id_doctor: props.id_doctor,
       name: props.name,
       specialty: props.specialty,
       icon: props.icon

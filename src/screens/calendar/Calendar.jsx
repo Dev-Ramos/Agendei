@@ -15,10 +15,12 @@ const Calendar = () => {
   const navigation = useNavigation()
   const [selected, setSelected] = useState(new Date().toISOString().slice(0, 10))
   const [selectedHour, setSelectedHour] = useState('09:00')
+
   const Action = ()=>{
-    console.log(`Reserva: ${params.description}\n Data: ${selected}\n Horário: ${selectedHour}\n Valor: ${params.price}`)
+    console.log(`Serviço: ${params.id_service}\n Data: ${selected}\n Horário: ${selectedHour}\n doutor: ${params.id_doctor}`)
     navigation.navigate('home')
   }
+  
   return (
     <View style={styles.container}>
       <View>

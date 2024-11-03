@@ -15,7 +15,9 @@ const Home = () => {
         keyExtractor={(doc) => doc.id_doctor}
         showsVerticalScrollIndicator={false}
         renderItem={({item}) => {
-          return <Doctor name={item.name} 
+          return <Doctor 
+            id_doctor={item.id_doctor}
+            name={item.name} 
             icon={item.icon}
             specialty={item.specialty}/>
         }}

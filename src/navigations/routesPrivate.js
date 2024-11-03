@@ -5,7 +5,7 @@ const Stack = createNativeStackNavigator()
 
 const RoutesPrivate = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="main" component={TabNavigation}/>
     </Stack.Navigator>
   )

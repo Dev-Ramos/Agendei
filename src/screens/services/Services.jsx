@@ -4,9 +4,16 @@ import { doctors_services } from "../../constants/data.js"
 import icon from '../../constants/icon.js'
 import Service from "../../components/service/Service.jsx"
 import { useRoute } from "@react-navigation/native"
-const Services = () => {
+const Services = (props) => {
   const params = useRoute().params
-  
+  const id_doctor = params.id_doctor
+  // Colocar a navegação de serviço aqui, para poder passar o id_service e id_doctor e fazer o roteamento
+  const ClickService = (id_service)=>{
+    props.navigation.navigate('calendar', {
+      id_service,
+      id_doctor
+    })
+  }
   return (
     <View style={styles.container}>
       <View style={styles.banner}>
@@ -20,7 +27,11 @@ const Services = () => {
         keyExtractor={(serv) => serv.id_service}
         showsVerticalScrollIndicator={false}
         renderItem={({item}) => {
-          return <Service price={item.price} description={item.description}/>
+          return <Service 
+          id_service={item.id_service} 
+          price={item.price} 
+          description={item.description}
+          onPress={ClickService}/>
         }}
       /> 
     </View>
