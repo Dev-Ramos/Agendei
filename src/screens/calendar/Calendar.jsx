@@ -1,4 +1,4 @@
-import { Text, View } from "react-native"
+import { Alert, Text, View } from "react-native"
 import { styles } from "./calendar.style"
 import { Calendar as Schedule, LocaleConfig } from "react-native-calendars"
 import {ptBR} from '../../constants/calendar.js'
@@ -6,28 +6,51 @@ import { useState } from "react"
 import { Picker } from "@react-native-picker/picker"
 import Button from '../../components/button/button.jsx'
 import { useNavigation, useRoute } from "@react-navigation/native"
+import api from "../../constants/api.js"
 
 LocaleConfig.locales['pt-br'] = ptBR
 LocaleConfig.defaultLocale = 'pt-br'
 
-const Calendar = () => {
+const Calendar = (props) => {
   const params = useRoute().params
   const navigation = useNavigation()
-  const [selected, setSelected] = useState(new Date().toISOString().slice(0, 10))
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().slice(0, 10))
   const [selectedHour, setSelectedHour] = useState('09:00')
-  const Action = ()=>{
-    console.log(`Reserva: ${params.description}\n Data: ${selected}\n Horário: ${selectedHour}\n Valor: ${params.price}`)
-    navigation.navigate('home')
+
+  // const Action = ()=>{
+  //   console.log(`Serviço: ${params.id_service}\n Data: ${selected}\n Horário: ${selectedHour}\n doutor: ${params.id_doctor}`)
+  //   navigation.navigate('home')
+  // }
+
+  const ClickBooking = async()=>{
+    try {
+      const response = await api.post("/appointments", {
+        id_doctor: params.id_doctor,
+        id_service: params.id_service,
+        booking_date: selectedDate,
+        booking_hour: selectedHour
+      })
+
+      if(response.data?.id_appointment)
+        props.navigation.popToTop()
+      
+    }catch (error) {
+      if(error.response?.data.error)
+        Alert.alert(error.response.data.error)
+      else
+        Alert.alert('Ocorreu um erro no servidor')
   }
+  }
+  
   return (
     <View style={styles.container}>
       <View>
         <Schedule theme={styles.theme}
           onDayPress={(day) => {
-            setSelected(day.dateString)
+            setSelectedDate(day.dateString)
           }}
           markedDates={{
-            [selected]: {selected: true}
+            [selectedDate]: {selected: true}
           }}
           minDate={new Date().toDateString()}
           />
@@ -47,7 +70,7 @@ const Calendar = () => {
       </View>
 
         <View>
-          <Button text='Confirmar Reserva' action={Action}/>
+          <Button text='Confirmar Reserva' action={ClickBooking}/>
         </View>
     </View>
   )

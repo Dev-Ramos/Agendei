@@ -6,7 +6,7 @@ import { style } from "./booking.style.js"
 const Booking = (props) => {
 
   const Action = ()=>{
-    Alert.alert('Você desmarcou uma consulta')
+    props.onPress(props.id_appointment)
   }
 
   return (

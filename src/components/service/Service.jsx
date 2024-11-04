@@ -1,17 +1,8 @@
-import { Alert, Text, View } from "react-native"
+import { Text, View } from "react-native"
 import Button from '../button/button.jsx'
 import { styles } from "./service.style.js"
-import { useNavigation } from "@react-navigation/native"
 
 const Service = (props) => {
-
-  const navigation = useNavigation()
-  const Action = ()=>{
-    navigation.push('calendar', {
-      description: props.description,
-      price: props.price
-    })
-  }
 
   return (
     <View style={styles.service}>
@@ -24,7 +15,7 @@ const Service = (props) => {
              }).format(props.price)
           }</Text>
       </View>
-      <Button text='Agendar' theme='primary' action={Action}/>
+      <Button text='Agendar' theme='primary' action={()=> props.onPress(props.id_service)}/>
     </View>
   )
 }
