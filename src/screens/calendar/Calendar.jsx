@@ -50,7 +50,7 @@ const Calendar = (props) => {
             setSelectedDate(day.dateString)
           }}
           markedDates={{
-            [selected]: {selected: true}
+            [selectedDate]: {selected: true}
           }}
           minDate={new Date().toDateString()}
           />

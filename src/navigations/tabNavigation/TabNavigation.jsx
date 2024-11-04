@@ -14,6 +14,7 @@ const TabNavigation = () => {
       <Tab.Screen name="Home" component={HomeNavigation} options={{
         headerShown: false,
         tabBarShowLabel: false,
+        unmountOnBlur: true,
         tabBarIcon: ({focused})=>{
           return <Image source={icon.home} 
           style={{
@@ -29,6 +30,7 @@ const TabNavigation = () => {
           return <Text style={styles.title}>Minhas Reservas</Text>
         },
         tabBarShowLabel: false,
+        unmountOnBlur: true,
         tabBarIcon: ({focused})=>{
           return <Image source={icon.calendar} 
           style={{
@@ -44,6 +46,7 @@ const TabNavigation = () => {
           return <Text style={styles.title}>Meu Perfil</Text>
         },
         tabBarShowLabel: false,
+        unmountOnBlur: true,
         tabBarIcon: ({focused})=>{
           return <Image source={icon.profile} 
           style={{
